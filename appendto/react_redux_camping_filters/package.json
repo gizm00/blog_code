@@ -1,0 +1,36 @@
+{
+  "name": "react_redux_camping_filters",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "babel-core": "^6.5.2",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "chai": "^3.5.0",
+    "chai-immutable": "^1.6.0",
+    "mocha": "^3.2.0",
+    "react-redux": "^5.0.1",
+    "react-scripts": "0.8.4",
+    "redux": "^3.6.0",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "dependencies": {
+    "immutable": "^3.8.1",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
