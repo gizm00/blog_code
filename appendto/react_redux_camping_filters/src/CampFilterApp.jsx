@@ -1,39 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 import * as actionCreators from './action_creators';
 import './App.css';
 import CampFilterList from './CampFilterList';
+import CampMapContainer from './CampMapContainer';
 
 export class CampFilterApp extends React.Component {
 
-  checkFilters(marker) {
-    let keep = true
-    this.props.filters.forEach(
-      filter => {
-        if (!marker.properties[filter]) {
-          keep = false
-        }
-      }
-    );
-
-    if (keep) {
-      marker.setmap(self.props.map)
-    }
-    else {
-      // marker.removemap (?)
-    }
-  }
-  setVisibleMarkers() {
-    if (this.props.markers) {
-      this.props.markers.forEach(marker => {
-        this.checkFilters(marker)
-      });
-    }
-  }
   render() {
     return (
       <div>
         <CampFilterList {...this.props}/>
+        <CampMapContainer map={this.props.map}
+                markers={this.props.markers}
+                filters={this.props.filters}
+                markerClick={this.props.markerClick}/>
+          }
       </div>
   )};
 }

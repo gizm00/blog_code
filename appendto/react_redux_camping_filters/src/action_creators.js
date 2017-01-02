@@ -4,3 +4,10 @@ export function changeFilter(filter) {
     filter
   }
 }
+
+export function markerClick(marker) {
+  return {
+    type: 'MARKER_CLICK',
+    marker
+  }
+}
