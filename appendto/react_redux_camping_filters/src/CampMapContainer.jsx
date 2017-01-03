@@ -33,20 +33,12 @@ export class CampMapContainer extends React.Component {
 
     return (
       <CampMap google={this.props.google}>
-        {this.getMarkers().map(marker =>
-          <Marker
-            key={marker.get('title')}
-            title={marker.get('title')}
-            description={marker.get('description')}
-            properties={marker.get('properties')}
-            position={marker.get('position')}
-            onClick={this.props.showInfoWindow}/>
-        )}
       </CampMap>
     )
   }
 }
 
+// adds google to props
 let key = config.getGoogleKey()
 export default GoogleApiComponent({
   apiKey: key

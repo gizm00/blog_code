@@ -20,10 +20,10 @@ export default class CampMap extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.props.map !== prevProps.map) {
+    //if (this.props.map !== prevProps.map) {
       console.log("component did update")
       this.loadMap();
-    }
+  //  }
   }
 
   // called after the component renders
@@ -53,7 +53,7 @@ export default class CampMap extends React.Component {
       console.log("Setting map on " + this.map)
     }
 
-    this.forceUpdate()
+    //this.forceUpdate()
   }
 
   render() {
@@ -64,7 +64,6 @@ export default class CampMap extends React.Component {
     return (
       <div style={style} ref='map'>
         Loading map...
-        {this.renderChildren()}
       </div>
     )
   }
