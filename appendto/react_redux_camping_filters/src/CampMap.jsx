@@ -14,12 +14,16 @@ export default class CampMap extends React.Component {
    })
   }
 
-  componentWillMount() {
+  componentDidMount() {
+    console.log("component did mount")
     this.loadMap();
   }
 
   componentDidUpdate(prevProps, prevState) {
-    this.loadMap();
+    if (this.props.map !== prevProps.map) {
+      console.log("component did update")
+      this.loadMap();
+    }
   }
 
   // called after the component renders
