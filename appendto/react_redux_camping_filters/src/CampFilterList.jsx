@@ -13,7 +13,6 @@ export default class CampFilterList extends React.Component {
   render() {
     return (
       <div>
-      <ul>
         {this.getFilters().map(item =>
           <CampFilter id={item.get('id')}
                   key={item.get('id')}
@@ -21,7 +20,6 @@ export default class CampFilterList extends React.Component {
                   />
 
         )}
-      </ul>
       </div>
   )}
 }

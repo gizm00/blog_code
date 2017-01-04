@@ -4,7 +4,6 @@ import * as actionCreators from './action_creators';
 import './App.css';
 import CampFilterList from './CampFilterList';
 import CampList from './CampList';
-import CampMapContainer from './CampMapContainer';
 
 export class CampFilterApp extends React.Component {
 
@@ -13,11 +12,6 @@ export class CampFilterApp extends React.Component {
       <div>
         <CampFilterList {...this.props}/>
         <CampList {...this.props}/>
-        <CampMapContainer {...this.props}
-                map={this.props.map}
-                markers={this.props.markers}
-                filters={this.props.filters}
-                markerClick={this.props.markerClick}/>
 
       </div>
   )};
@@ -32,7 +26,7 @@ function mapStateToProps(state) {
     item => item.get('inuse') === true
   )
   active_filters.forEach(filter => {
-    filtered_campgrounds = campgrounds.filter(
+    filtered_campgrounds = filtered_campgrounds.filter(
       item => item.get('properties').get(filter.get('id')) === true
     )
   })

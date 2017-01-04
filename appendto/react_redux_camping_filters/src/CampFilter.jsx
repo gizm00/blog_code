@@ -3,7 +3,7 @@ import React from 'react';
 export default class CampFilter extends React.Component {
   render() {
     return (
-      <li>
+      <div>
       <input type="checkbox"
                className="toggle"
                id={this.props.id}
@@ -11,6 +11,7 @@ export default class CampFilter extends React.Component {
                onClick={() => this.props.changeFilter(this.props.id)}/>
 
              <label ref="text">{this.props.id}</label>
-      </li>)
+             </div>
+      )
   }
 }

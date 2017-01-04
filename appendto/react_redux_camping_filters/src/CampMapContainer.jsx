@@ -20,7 +20,6 @@ export class CampMapContainer extends React.Component {
         active_markers = active_markers.filter(
           marker => marker.get('properties').get(filter.get('id')) === true
         )
-
       })
       console.log("active markers:" + active_markers)
       return active_markers

@@ -46,23 +46,10 @@ let features = [{
   "properties": {
     "flush": true,
     "shower": true,
-    "vault": false,
+    "pets": true,
+    "water": true,
     "description": "Flush toilet, Shower",
     "title": "Mazama",
-    "marker-size": "small"
-  }
-}, {
-  "type": "Feature",
-  "geometry": {
-    "type": "Point",
-    "coordinates": [-122.342876, 43.063217]
-  },
-  "properties": {
-    "flush": false,
-    "shower": false,
-    "vault": true,
-    "description": "Vault toilet",
-    "title": "Claude Lewis Sno-Park-USFS",
     "marker-size": "small"
   }
 }, {
@@ -74,7 +61,8 @@ let features = [{
   "properties": {
     "flush": true,
     "shower": false,
-    "vault": false,
+    "pets": false,
+    "water":true,
     "description": "Flush toilet",
     "title": "Lost Creek",
     "marker-size": "small"
@@ -88,7 +76,8 @@ let features = [{
   "properties": {
     "flush": false,
     "shower": false,
-    "vault": true,
+    "pets": true,
+    "water":false,
     "description": "Vault toilet",
     "title": "Hamaker",
     "marker-size": "small"
@@ -102,7 +91,8 @@ let features = [{
   "properties": {
     "flush": false,
     "shower": false,
-    "vault": true,
+    "pets": true,
+    "water": false,
     "description": "Vault toilet",
     "title": "Huckleberry Mountain",
     "marker-size": "small"
@@ -116,23 +106,10 @@ let features = [{
   "properties": {
     "flush": false,
     "shower": false,
-    "vault": true,
+    "pets": true,
+    "water": false,
     "description": "Vault toilet",
     "title": "Natural Bridge -USFS",
-    "marker-size": "small"
-  }
-}, {
-  "type": "Feature",
-  "geometry": {
-    "type": "Point",
-    "coordinates": [-122.433105, 42.919678]
-  },
-  "properties": {
-    "flush": false,
-    "shower": false,
-    "vault": false,
-    "description": "",
-    "title": "Farewell Bend",
     "marker-size": "small"
   }
 }, {
@@ -144,23 +121,10 @@ let features = [{
   "properties": {
     "flush": false,
     "shower": false,
-    "vault": true,
+    "pets": true,
+    "water": true,
     "description": "Vault toilet",
     "title": "Scott Creek",
-    "marker-size": "small"
-  }
-}, {
-  "type": "Feature",
-  "geometry": {
-    "type": "Point",
-    "coordinates": [-122.324644, 42.913045]
-  },
-  "properties": {
-    "flush": false,
-    "shower": false,
-    "vault": true,
-    "description": "Vault toilet",
-    "title": "Thousand Springs Sno-Park-USFS",
     "marker-size": "small"
   }
 }, {
@@ -172,7 +136,8 @@ let features = [{
   "properties": {
     "flush": false,
     "shower": false,
-    "vault": true,
+    "pets": true,
+    "water": true,
     "description": "Vault toilet",
     "title": "Union Creek",
     "marker-size": "small"
@@ -186,7 +151,8 @@ let features = [{
   "properties": {
     "flush": false,
     "shower": false,
-    "vault": false,
+    "pets": false,
+    "water": true,
     "description": "",
     "title": "Farewell Bend Campground",
     "marker-size": "small"

@@ -12,7 +12,7 @@ export default class CampList extends React.Component {
   render() {
     return (
       <div>
-      <ul>
+
         {this.getList().map(item =>
           <CampListItem
                   key={item.get('title')}
@@ -21,7 +21,7 @@ export default class CampList extends React.Component {
                   />
 
         )}
-      </ul>
+
       </div>
   )}
   }
