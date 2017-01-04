@@ -51,7 +51,7 @@ let features = [{
     "water": true,
     "description": "Flush toilet, Shower",
     "title": "Mazama",
-    "image": "../images/mazama.jpg",
+    "image": "mazama.jpg",
     "url": "http://www.craterlakelodges.com/lodging/mazama-village-campground/",
     "marker-size": "small"
   }
@@ -69,7 +69,7 @@ let features = [{
     "description": "Flush toilet",
     "title": "Lost Creek",
     "url": "http://www.nps.gov/crla/planyourvisit/campgrounds.htm",
-    "image": "../images/lostcreek.jpg",
+    "image": "lostcreek.jpg",
     "marker-size": "small"
   }
 }, {
@@ -86,7 +86,7 @@ let features = [{
     "description": "Vault toilet",
     "title": "Huckleberry Mountain",
     "url": "https://www.fs.usda.gov/recarea/rogue-siskiyou/recreation/ohv/recarea/?recid=69764&actid=29",
-    "image": "../images/huckleberry.jpg",
+    "image": "huckleberry.jpg",
     "marker-size": "small"
   }
 }, {
@@ -103,7 +103,7 @@ let features = [{
     "description": "Vault toilet",
     "title": "Natural Bridge -USFS",
     "url": "https://www.fs.usda.gov/recarea/rogue-siskiyou/null/recarea/?recid=69828&actid=29",
-    "image": "../images/naturalbridge.jpg",
+    "image": "naturalbridge.jpg",
     "marker-size": "small"
   }
 }, {
@@ -120,7 +120,7 @@ let features = [{
     "description": "Vault toilet",
     "title": "Scott Creek",
     "url": "https://www.fs.usda.gov/recarea/fremont-winema/recreation/recarea/?recid=59719&actid=31",
-    "image": "../images/scottcreek.jpg",
+    "image": "scottcreek.jpg",
     "marker-size": "small"
   }
 }, {
@@ -137,7 +137,7 @@ let features = [{
     "description": "Vault toilet",
     "title": "Union Creek",
     "url": "https://www.fs.usda.gov/recarea/rogue-siskiyou/recarea/?recid=69922",
-    "image": "../images/unioncreek.jpg",
+    "image": "unioncreek.jpg",
     "marker-size": "small"
   }
 }, {
@@ -154,7 +154,7 @@ let features = [{
     "description": "",
     "title": "Farewell Bend Campground",
     "url": "https://www.fs.usda.gov/recarea/rogue-siskiyou/null/recarea/?recid=69720&actid=29",
-    "image": "../images/farewellbend.jpg",
+    "image": "farewellbend.jpg",
     "marker-size": "small"
   }
 }]
