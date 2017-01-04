@@ -19,7 +19,8 @@ function get_markers(features) {
       'title' : feature['properties']['title'],
       'description' : feature['properties']['description'],
       'position' : [feature['geometry']['coordinates'][1],
-      feature['geometry']['coordinates'][0]]
+      feature['geometry']['coordinates'][0]],
+      'properties': feature['properties']
 
     })
   });

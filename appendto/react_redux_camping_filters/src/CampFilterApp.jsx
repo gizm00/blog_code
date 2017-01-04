@@ -11,7 +11,8 @@ export class CampFilterApp extends React.Component {
     return (
       <div>
         <CampFilterList {...this.props}/>
-        <CampMapContainer map={this.props.map}
+        <CampMapContainer {...this.props}
+                map={this.props.map}
                 markers={this.props.markers}
                 filters={this.props.filters}
                 markerClick={this.props.markerClick}/>

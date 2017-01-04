@@ -16,12 +16,13 @@ export class Marker extends React.Component {
 
   renderMarker() {
     let {
-      map, google, title, description
+      map, google, title, properties, description
     } = this.props;
 
     let lat = this.props.position.first()
     let long = this.props.position.last()
     let position = new google.maps.LatLng(lat,long);
+
 
     const pref = {
         map: map,

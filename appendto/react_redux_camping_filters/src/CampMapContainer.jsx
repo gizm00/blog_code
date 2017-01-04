@@ -7,6 +7,8 @@ import {Marker} from './Marker'
 
 export class CampMapContainer extends React.Component {
 
+  // adjust marker visibility to add/remove from map
+  // marker.visible=false
   getMarkers() {
     //const pos = {lat: 37.759703, lng: -122.428093}
     console.log("get markers")
@@ -42,7 +44,6 @@ export class CampMapContainer extends React.Component {
             key={marker.get('title')}
             title={marker.get('title')}
             description={marker.get('description')}
-            properties={marker.get('properties')}
             position={marker.get('position')}
             onClick={this.props.showInfoWindow}/>
         )}
