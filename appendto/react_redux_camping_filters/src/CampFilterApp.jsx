@@ -25,10 +25,22 @@ export class CampFilterApp extends React.Component {
 
 
 function mapStateToProps(state) {
+  let filters = state.get('filters')
+  let campgrounds = state.get('campgrounds')
+  let filtered_campgrounds = campgrounds
+  let active_filters = filters.filter(
+    item => item.get('inuse') === true
+  )
+  active_filters.forEach(filter => {
+    filtered_campgrounds = campgrounds.filter(
+      item => item.get('properties').get(filter.get('id')) === true
+    )
+  })
+
   return {
-    filters: state.get('filters'),
+    filters: filters,
     markers: state.get('markers'),
-    campgrounds: state.get('campgrounds')
+    campgrounds: filtered_campgrounds
   };
 }
 

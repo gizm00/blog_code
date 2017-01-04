@@ -15,7 +15,7 @@ export default class CampList extends React.Component {
       <ul>
         {this.getList().map(item =>
           <CampListItem
-                  key={item.get('id')}
+                  key={item.get('title')}
                   title={item.get('title')}
                   description={item.get('description')}
                   />
