@@ -3,3 +3,31 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.jumbotron {
+  margin-bottom: 5px;
+
+  margin-top:0px;
+  /*margin-left:-50px;*/
+  background-image: url(../images/craterlake_smaller.jpg);
+  background: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  /*height:70%*/
+
+}
+
+.jumbotron-text {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  background-color:rgba(124,124,124,0.8);
+  width:auto;
+}
+
+input[type=checkbox] {
+  transform: scale(1.5);
+}

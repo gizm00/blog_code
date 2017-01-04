@@ -1,16 +1,24 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import ReactDOM from 'react-dom'
+import {Jumbotron} from 'react-bootstrap';
 import * as actionCreators from './action_creators';
 import './App.css';
 import CampFilterList from './CampFilterList';
 import CampList from './CampList';
 
+
 export class CampFilterApp extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
+        <Jumbotron>
+          <h1>Crater Lake Camping</h1>
+        </Jumbotron>
+        <br></br>
         <CampFilterList {...this.props}/>
+        <br></br>
         <CampList {...this.props}/>
 
       </div>
