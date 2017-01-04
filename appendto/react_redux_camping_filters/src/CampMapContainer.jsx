@@ -23,6 +23,8 @@ export class CampMapContainer extends React.Component {
         )
 
       })
+
+      let sample_marker = { "title": "Huckleberry Mountain", "description": "Vault toilet", "position": [ 42.877807, -122.337174 ] }
       console.log("active markers:" + active_markers)
       return active_markers
     }
@@ -33,6 +35,17 @@ export class CampMapContainer extends React.Component {
 
     return (
       <CampMap google={this.props.google}>
+        {this.getMarkers().map(marker =>
+          <Marker
+            map={this.props.map}
+            filters={this.props.filters}
+            key={marker.get('title')}
+            title={marker.get('title')}
+            description={marker.get('description')}
+            properties={marker.get('properties')}
+            position={marker.get('position')}
+            onClick={this.props.showInfoWindow}/>
+        )}
       </CampMap>
     )
   }
