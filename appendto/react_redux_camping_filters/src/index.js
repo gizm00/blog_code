@@ -20,7 +20,8 @@ function get_markers(features) {
       'description' : feature['properties']['description'],
       'position' : [feature['geometry']['coordinates'][1],
       feature['geometry']['coordinates'][0]],
-      'properties': feature['properties']
+      'properties': feature['properties'],
+      'setMap': true
 
     })
   });
@@ -204,7 +205,8 @@ function set_state(markers) {
       {id: 'flush', inuse: false },
       {id: 'water', inuse: false }
     ],
-    markers: markers
+    markers: markers,
+    campgrounds: markers
   }
  })
 }
