@@ -2,9 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
-import axios from 'axios';
-
-
 import reducer from './reducer'
 import {CampFilterAppContainer} from './CampFilterApp';
 import './index.css';
@@ -12,10 +9,10 @@ import './index.css';
 
 const store = createStore(reducer)
 
-function get_markers(features) {
-  let markers = []
+function get_campgrounds(features) {
+  let campgrounds = []
   features.forEach(feature => {
-    markers.push({
+    campgrounds.push({
       'title' : feature['properties']['title'],
       'description' : feature['properties']['description'],
       'position' : [feature['geometry']['coordinates'][1],
@@ -26,18 +23,17 @@ function get_markers(features) {
 
     })
   });
-  console.log(markers)
-  return markers
+  return campgrounds
 }
 
 // get markers and then set initial state
-let geojson_url = 'https://raw.githubusercontent.com/gizm00/blog_code/master/appendto/python_maps_2/collection.geojson'
-/*axios.get(geojson_url)
+/*let geojson_url = 'https://raw.githubusercontent.com/gizm00/blog_code/master/appendto/python_maps_2/collection.geojson'
+axios.get(geojson_url)
   .then(result => {
     let features = result['data']['features']
-    set_state(get_markers(features))
-  })*/
-
+    set_state(get_campgrounds(features))
+  })
+*/
 let features = [{
   "type": "Feature",
   "geometry": {
@@ -159,9 +155,9 @@ let features = [{
   }
 }]
 
-set_state(get_markers(features))
+set_state(get_campgrounds(features))
 
-function set_state(markers) {
+function set_state(campgrounds) {
   store.dispatch ({
   type: 'SET_STATE',
   state: {
@@ -171,8 +167,8 @@ function set_state(markers) {
       {id: 'flush', inuse: false },
       {id: 'water', inuse: false }
     ],
-    markers: markers,
-    campgrounds: markers
+    markers: campgrounds,
+    campgrounds: campgrounds
   }
  })
 }
