@@ -31,13 +31,14 @@ export class CampMapContainer extends React.Component {
 
     return (
       <CampMap google={this.props.google}>
-        {this.getMarkers().map(marker =>
+        {this.props.markers.map(marker =>
           <Marker
             key={marker.get('title')}
             title={marker.get('title')}
             description={marker.get('description')}
             properties={marker.get('properties')}
             position={marker.get('position')}
+            mapOn={marker.get('mapOn')}
             onClick={this.props.showInfoWindow}/>
         )}
       </CampMap>

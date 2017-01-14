@@ -9,6 +9,9 @@ import './index.css';
 
 const store = createStore(reducer)
 
+// convert json into dict for use by the React components
+// add mapOn variable to indicate if the marker should be visible
+// by default, set mapOn to false, filtering will indicate if it should be true
 function get_campgrounds(features) {
   let campgrounds = []
   features.forEach(feature => {
@@ -19,7 +22,8 @@ function get_campgrounds(features) {
       feature['geometry']['coordinates'][0]],
       'properties': feature['properties'],
       'image': feature['properties']['image'],
-      'url': feature['properties']['url']
+      'url': feature['properties']['url'],
+      'mapOn': true
 
     })
   });

@@ -6,7 +6,8 @@ import * as actionCreators from './action_creators';
 import './App.css';
 import CampFilterList from './CampFilterList';
 import CampList from './CampList';
-
+import CampMapContainer from './CampMapContainer';
+import _ from 'underscore'
 
 export class CampFilterApp extends React.Component {
 
@@ -19,16 +20,24 @@ export class CampFilterApp extends React.Component {
         <br></br>
         <CampFilterList {...this.props}/>
         <br></br>
+        <CampMapContainer {...this.props}/>
         <CampList {...this.props}/>
 
       </div>
   )};
 }
 
+function getIndex(state, objName, field, itemId) {
+  return state.get(objName).findIndex(
+    (item) => item.get(field) === itemId
+  );
+}
+
 
 function mapStateToProps(state) {
   let filters = state.get('filters')
   let campgrounds = state.get('campgrounds')
+  let markers = state.get('markers')
   let filtered_campgrounds = campgrounds
   let active_filters = filters.filter(
     item => item.get('inuse') === true
@@ -38,10 +47,10 @@ function mapStateToProps(state) {
       item => item.get('properties').get(filter.get('id')) === true
     )
   })
-
+  
   return {
     filters: filters,
-    markers: state.get('markers'),
+    markers: markers,
     campgrounds: filtered_campgrounds
   };
 }
