@@ -30,14 +30,7 @@ function get_campgrounds(features) {
   return campgrounds
 }
 
-// get markers and then set initial state
-/*let geojson_url = 'https://raw.githubusercontent.com/gizm00/blog_code/master/appendto/python_maps_2/collection.geojson'
-axios.get(geojson_url)
-  .then(result => {
-    let features = result['data']['features']
-    set_state(get_campgrounds(features))
-  })
-*/
+
 let features = [{
   "type": "Feature",
   "geometry": {
@@ -172,7 +165,6 @@ function set_state(campgrounds) {
       {id: 'water', inuse: false }
     ],
     markers: campgrounds,
-    campgrounds: campgrounds
   }
  })
 }

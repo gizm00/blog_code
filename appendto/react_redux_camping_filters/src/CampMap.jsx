@@ -59,13 +59,15 @@ export default class CampMap extends React.Component {
 
   render() {
     const style = {
-      width: '100vw',
-      height: '100vh'
+      minWidth: '400px',
+      minHeight: '400px'
     }
     return (
-      <div style={style} ref='map'>
-        {this.renderChildren()}
-        Loading map...
+      <div className="row">
+        <div className='col-xs-12 col-sm-12 col-md-12' style={style} ref='map'>
+          {this.renderChildren()}
+          Loading map...
+        </div>
       </div>
     )
   }

@@ -2,12 +2,6 @@ import React from 'react';
 
 export class Marker extends React.Component {
 
-  /*componentWillUpdate(prevProps) {
-    //if ((this.props.filters !== prevProps.filters) && prevProps.map) {
-    if (prevProps.map) {
-        this.renderMarker();
-    }
-  }*/
   componentDidUpdate(prevProps) {
     if (this.props !== prevProps) {
       this.renderMarker()

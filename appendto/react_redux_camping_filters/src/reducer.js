@@ -58,8 +58,7 @@ function changeFilter(state, filter) {
     const updatedMarker = updateMarker(state, markerIndex, mapOn)
     updatedMarkers = updatedMarkers.set(markerIndex, updatedMarker)
   })
-  console.log(updatedMarkers)
-  //return state.update('filters', filters => updatedFilters);
+
   return state.merge(Map({
     'filters': updatedFilters,
     'markers': updatedMarkers

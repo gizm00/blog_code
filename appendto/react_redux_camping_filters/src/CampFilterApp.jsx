@@ -21,6 +21,7 @@ export class CampFilterApp extends React.Component {
         <CampFilterList {...this.props}/>
         <br></br>
         <CampMapContainer {...this.props}/>
+        <br></br>
         <CampList {...this.props}/>
 
       </div>
@@ -35,23 +36,9 @@ function getIndex(state, objName, field, itemId) {
 
 
 function mapStateToProps(state) {
-  let filters = state.get('filters')
-  let campgrounds = state.get('campgrounds')
-  let markers = state.get('markers')
-  let filtered_campgrounds = campgrounds
-  let active_filters = filters.filter(
-    item => item.get('inuse') === true
-  )
-  active_filters.forEach(filter => {
-    filtered_campgrounds = filtered_campgrounds.filter(
-      item => item.get('properties').get(filter.get('id')) === true
-    )
-  })
-  
   return {
-    filters: filters,
-    markers: markers,
-    campgrounds: filtered_campgrounds
+    filters: state.get('filters'),
+    markers: state.get('markers'),
   };
 }
 

@@ -2,10 +2,15 @@ import React from 'react';
 import CampListItem from './CampListItem'
 
 export default class CampList extends React.Component {
+  getCampgrounds() {
+    return this.props.markers.filter(
+      cg => cg.get('mapOn') === true
+    )
+  }
   render() {
     return (
       <div>
-        {this.props.campgrounds.map(item =>
+        {this.getCampgrounds().map(item =>
           <CampListItem
                   key={item.get('title')}
                   title={item.get('title')}
