@@ -15,13 +15,11 @@ export default class CampMap extends React.Component {
   }
 
   componentDidMount() {
-    console.log("component did mount")
     this.loadMap();
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.google !== this.props.google) {
-      console.log("component did update")
       this.loadMap();
       this.forceUpdate()
    }

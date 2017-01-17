@@ -11,7 +11,7 @@ export default class CampList extends React.Component {
     return (
       <div>
         {this.getCampgrounds().map(item =>
-          <CampListItem
+          <CampListItem {...this.props}
                   key={item.get('title')}
                   title={item.get('title')}
                   image={item.get('image')}

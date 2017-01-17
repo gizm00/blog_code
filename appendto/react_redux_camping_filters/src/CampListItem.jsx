@@ -1,6 +1,17 @@
 import React from 'react';
 
 export default class CampListItem extends React.Component {
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.activeMarker !== prevProps.activeMarker) {
+      let img_ref = this.refs.cg_image
+      if (this.props.showingInfoWindow && (this.props.selectedTitle === this.props.title)) {
+        img_ref.style.border = "1px solid black"
+      }
+      else {
+        img_ref.style.border = null
+      }
+    }
+  }
 
   render() {
     let latlng_str = parseFloat(this.props.position.first()).toFixed(3) + "," + parseFloat(this.props.position.last()).toFixed(3)
@@ -10,7 +21,7 @@ export default class CampListItem extends React.Component {
       <div className="col-sm-3" style={{"marginBottom":20}}>
         <div className="row">
           <div>
-            <img src={img_url} style={{width:200, height:100, "border":"1px solid black"}}></img>
+            <img src={img_url} ref="cg_image" style={{width:200, height:100}}></img>
           </div>
           <div>
               <a href={this.props.url} target="_blank">{this.props.title}</a><br></br>
