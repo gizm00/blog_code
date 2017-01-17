@@ -5,7 +5,7 @@ export function changeFilter(filter) {
   }
 }
 
-export function markerClick(marker) {
+export function onMarkerClick(marker) {
   return {
     type: 'MARKER_CLICK',
     marker

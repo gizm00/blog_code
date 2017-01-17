@@ -37,6 +37,9 @@ export class Marker extends React.Component {
       };
 
     this.marker = new google.maps.Marker(pref);
+    this.marker.addListener('click', (e) => {
+      this.props.onMarkerClick(this.marker)
+    })
   }
 
   render() {

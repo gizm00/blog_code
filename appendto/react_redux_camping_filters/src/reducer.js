@@ -16,11 +16,14 @@ function setState(state, newState) {
   return state.merge(newState);
 }
 
-function markerClick(state, marker) {
-  // get marker info
-  // update text in details window
+function onMarkerClick(state, marker) {
+
   console.log('markerClick in reducer')
-  return state
+  return state.merge(Map({
+    'activeMarker': marker,
+    'selectedTitle': marker.get('title'),
+    'showingInfoWindow': true
+  }))
 }
 
 function getFilters(state, filterIndex) {
@@ -72,7 +75,7 @@ export default function(state = Map(), action) {
     case 'CHANGE_FILTER':
         return changeFilter(state, action.filter);
     case 'MARKER_CLICK':
-        return markerClick(state, action.marker)
+        return onMarkerClick(state, action.marker)
     default:
       return state
   }

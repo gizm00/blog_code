@@ -165,6 +165,9 @@ function set_state(campgrounds) {
       {id: 'water', inuse: false }
     ],
     markers: campgrounds,
+    showingInfoWindow: "false",
+    activeMarker: "null",
+    selectedTitle: "thing"
   }
  })
 }

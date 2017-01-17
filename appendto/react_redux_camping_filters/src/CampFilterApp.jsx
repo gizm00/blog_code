@@ -39,6 +39,9 @@ function mapStateToProps(state) {
   return {
     filters: state.get('filters'),
     markers: state.get('markers'),
+    showingInfoWindow: state.get('showingInfoWindow'),
+    activeMarker: state.get('activeMarker'),
+    selectedTitle: state.get('selectedTitle')
   };
 }
 

@@ -10,7 +10,7 @@ export default class CampListItem extends React.Component {
       <div className="col-sm-3" style={{"marginBottom":20}}>
         <div className="row">
           <div>
-            <img src={img_url} style={{width:200, height:100}}></img>
+            <img src={img_url} style={{width:200, height:100, "border":"1px solid black"}}></img>
           </div>
           <div>
               <a href={this.props.url} target="_blank">{this.props.title}</a><br></br>
