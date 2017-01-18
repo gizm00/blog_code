@@ -3,7 +3,9 @@ import React from 'react';
 export class Marker extends React.Component {
 
   componentDidUpdate(prevProps) {
-    if (this.props !== prevProps) {
+    if ((this.props.map !== prevProps.map) ||
+    (this.props.properties !== prevProps.properties) ||
+    (this.props.mapOn !== prevProps.mapOn)) {
       this.renderMarker()
     }
   }
@@ -40,6 +42,8 @@ export class Marker extends React.Component {
     this.marker.addListener('click', (e) => {
       this.props.onMarkerClick(this.marker)
     })
+
+    this.props.addMarker(this.marker)
   }
 
   render() {

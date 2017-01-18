@@ -8,6 +8,8 @@ import CampFilterList from './CampFilterList';
 import CampList from './CampList';
 import CampMapContainer from './CampMapContainer';
 import _ from 'underscore'
+import * as config from './config'
+import GoogleApiComponent from './GoogleApiComponent'
 
 export class CampFilterApp extends React.Component {
 
@@ -20,9 +22,8 @@ export class CampFilterApp extends React.Component {
         <br></br>
         <CampFilterList {...this.props}/>
         <br></br>
-        <CampMapContainer {...this.props}/>
-        <br></br>
-        <CampList {...this.props}/>
+        <CampMapContainer {...this.props} />
+
 
       </div>
   )};
@@ -41,8 +42,10 @@ function mapStateToProps(state) {
     markers: state.get('markers'),
     showingInfoWindow: state.get('showingInfoWindow'),
     activeMarker: state.get('activeMarker'),
-    selectedTitle: state.get('selectedTitle')
+    selectedTitle: state.get('selectedTitle'),
+    gmapMarkers: state.get('gmapMarkers')
   };
 }
+
 
 export const CampFilterAppContainer = connect(mapStateToProps,actionCreators)(CampFilterApp);

@@ -11,3 +11,10 @@ export function onMarkerClick(marker) {
     marker
   }
 }
+
+export function addMarker(marker) {
+    return {
+      type: 'ADD_MARKER',
+      marker
+    }
+}

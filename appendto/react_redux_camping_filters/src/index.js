@@ -165,6 +165,7 @@ function set_state(campgrounds) {
       {id: 'water', inuse: false }
     ],
     markers: campgrounds,
+    gmapMarkers: [],
     showingInfoWindow: "false",
     activeMarker: "null",
     selectedTitle: "thing"

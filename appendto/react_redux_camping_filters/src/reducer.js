@@ -12,6 +12,18 @@ function getMarkerIndex(state, itemId) {
   );
 }
 
+function getFilters(state, filterIndex) {
+  return state.get('filters')
+    .get(filterIndex)
+    .update('inuse', inuse => inuse === false ? true : false);
+}
+
+function updateMarker(state, markerIndex, mapOnVal) {
+  return state.get('markers')
+    .get(markerIndex)
+    .update('mapOn', mapOn => mapOnVal);
+}
+
 function setState(state, newState) {
   return state.merge(newState);
 }
@@ -26,16 +38,10 @@ function onMarkerClick(state, marker) {
   }))
 }
 
-function getFilters(state, filterIndex) {
-  return state.get('filters')
-    .get(filterIndex)
-    .update('inuse', inuse => inuse === false ? true : false);
-}
-
-function updateMarker(state, markerIndex, mapOnVal) {
-  return state.get('markers')
-    .get(markerIndex)
-    .update('mapOn', mapOn => mapOnVal);
+function addMarker(state, marker) {
+  let markers = state.get('gmapMarkers')
+  let newMarkers = markers.push(marker)
+  return state.update('gmapMarkers', oldmarkers => newMarkers)
 }
 
 function changeFilter(state, filter) {
@@ -76,6 +82,8 @@ export default function(state = Map(), action) {
         return changeFilter(state, action.filter);
     case 'MARKER_CLICK':
         return onMarkerClick(state, action.marker)
+    case 'ADD_MARKER':
+        return addMarker(state, action.marker)
     default:
       return state
   }
