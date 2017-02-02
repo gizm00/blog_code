@@ -161,6 +161,9 @@ let features = [{
 set_state(get_campgrounds(features))
 
 function set_state(campgrounds) {
+  let today = moment()
+  console.log(today)
+
   store.dispatch ({
   type: 'SET_STATE',
   state: {
@@ -175,11 +178,12 @@ function set_state(campgrounds) {
     showingInfoWindow: false,
     activeMarker: null,
     selectedTitle: "",
-    currentDate: "2017-02-01",// replace with current date
+    currentDate: today,
     weatherSummary: "",
     currentLat: 42.9456,
-    currentLong: -122.2
-  }
+    currentLong: -122.2,
+    selectedDate: undefined
+    }
  })
 }
 

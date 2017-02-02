@@ -1,5 +1,6 @@
 import {Map} from 'immutable';
 import axios from 'axios';
+var moment = require('moment');
 
 function getFilterIndex(state, itemId) {
   return state.get('filters').findIndex(
@@ -93,6 +94,13 @@ function recvWeather(state, weatherDate, result) {
 
 }
 
+function reqWeather(state, weatherDate) {
+  return state.merge(Map({
+    'weatherSummary': "Loading...",
+    'selectedDate': moment(weatherDate)
+  }))
+}
+
 export default function(state = Map(), action) {
   switch (action.type) {
     case 'SET_STATE':
@@ -105,6 +113,8 @@ export default function(state = Map(), action) {
         return addMarker(state, action.marker)
     case 'RECV_WEATHER':
         return recvWeather(state, action.weatherDate, action.response)
+    case 'REQ_WEATHER':
+        return reqWeather(state, action.weatherDate)
     default:
       return state
   }

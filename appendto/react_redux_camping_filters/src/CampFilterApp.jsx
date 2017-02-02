@@ -53,7 +53,8 @@ function mapStateToProps(state) {
     currentLat: state.get('currentLat'),
     currentLong: state.get('currentLong'),
     gmapMarkers: state.get('gmapMarkers'),
-    isFetching: state.get('isFetching')
+    isFetching: state.get('isFetching'),
+    selectedDate: state.get('selectedDate')
   };
 }
 
