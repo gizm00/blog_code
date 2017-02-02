@@ -17,9 +17,11 @@ export class CampFilterApp extends React.Component {
   render() {
     return (
       <div className="container">
+        <div><a href="https://darksky.net/poweredby/"><img src="https://darksky.net/dev/img/attribution/poweredby.png" style={{width:100}}/></a></div>
         <Jumbotron>
           <h1>Crater Lake Camping</h1>
         </Jumbotron>
+
         <br></br>
         <CampFilterList {...this.props}/>
         <br></br>
@@ -50,7 +52,8 @@ function mapStateToProps(state) {
     currentDate: state.get('currentDate'),
     currentLat: state.get('currentLat'),
     currentLong: state.get('currentLong'),
-    gmapMarkers: state.get('gmapMarkers')
+    gmapMarkers: state.get('gmapMarkers'),
+    isFetching: state.get('isFetching')
   };
 }
 

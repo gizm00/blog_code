@@ -75,41 +75,21 @@ function changeFilter(state, filter) {
   }))
 }
 
-
-
-// weatherDate will be in 2017-03-20 format
-function getWeather(state, weatherDate) {
-  console.log("getting weather")
-  let request_url="https://crossorigin.me/https://api.darksky.net/forecast/8266ff95ef9bbfccf0ea24c325818f31/"
-  let weather_str = weatherDate + "T00:00:00"
-  request_url = request_url +  state.get('currentLat') + "," + state.get('currentLong')  + "," + weather_str
-  console.log(request_url)
+function recvWeather(state, weatherDate, result) {
   let content = ""
   try {
-   axios.get(request_url)
-    .then(function(result) {
-      content =  result.data.daily.data[0].summary
-      console.log(result.data)
-      return state.merge(Map({
-        'weatherSummary': content
-      }))
-    })
-    .catch(function (error) {
-      content = "unable to retrieve weather data"
-      console.log(error);
-      return state.merge(Map({
-        'weatherSummary': content
-      }))
-    });
+    let tempMax = result.daily.data[0].temperatureMax
+    let tempMin = result.daily.data[0].temperatureMin
+    let summary =  result.daily.data[0].summary
+    content = summary + " High: " + Math.ceil(tempMax) + " Low: " + Math.ceil(tempMin)
   }
   catch(err) {
-    console.log(err)
-    return state.merge(Map({
-      'weatherSummary': content
-    }))
+    console.log("couldnt get weather summary: " + err)
   }
 
-  return state
+  return state.merge(Map({
+    'weatherSummary': content
+  }))
 
 }
 
@@ -123,8 +103,8 @@ export default function(state = Map(), action) {
         return onMarkerClick(state, action.marker)
     case 'ADD_MARKER':
         return addMarker(state, action.marker)
-    case 'GET_WEATHER':
-        return getWeather(state, action.weatherDate)
+    case 'RECV_WEATHER':
+        return recvWeather(state, action.weatherDate, action.response)
     default:
       return state
   }

@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 import reducer from './reducer'
 import {CampFilterAppContainer} from './CampFilterApp';
 import './index.css';
 var moment = require('moment');
+import 'babel-polyfill'
+import thunkMiddleware from 'redux-thunk'
+import {fetchWeather} from './action_creators'
 
-const store = createStore(reducer)
+const store = createStore(reducer, applyMiddleware(
+    thunkMiddleware
+  ))
+
 
 // convert json into dict for use by the React components
 // add mapOn variable to indicate if the marker should be visible
