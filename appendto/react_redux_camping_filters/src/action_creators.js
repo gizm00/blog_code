@@ -18,3 +18,10 @@ export function addMarker(marker) {
       marker
     }
 }
+
+export function getWeather(weatherDate) {
+    return {
+      type: 'GET_WEATHER',
+      weatherDate
+    }
+}

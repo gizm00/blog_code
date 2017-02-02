@@ -9,10 +9,13 @@
     "babel-preset-react": "^6.5.0",
     "chai": "^3.5.0",
     "chai-immutable": "^1.6.0",
+    "isomorphic-fetch": "^2.2.1",
     "mocha": "^3.2.0",
+    "react-datepicker": "^0.40.0",
     "react-redux": "^5.0.1",
     "react-scripts": "0.8.4",
     "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0",
     "underscore": "^1.8.3",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
@@ -26,6 +29,7 @@
   "dependencies": {
     "google-maps-react": "^1.0.19",
     "immutable": "^3.8.1",
+    "moment": "^2.17.1",
     "react": "^15.4.1",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.1"

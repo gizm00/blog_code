@@ -5,7 +5,7 @@ import {createStore} from 'redux';
 import reducer from './reducer'
 import {CampFilterAppContainer} from './CampFilterApp';
 import './index.css';
-
+var moment = require('moment');
 
 const store = createStore(reducer)
 
@@ -166,9 +166,13 @@ function set_state(campgrounds) {
     ],
     markers: campgrounds,
     gmapMarkers: [],
-    showingInfoWindow: "false",
-    activeMarker: "null",
-    selectedTitle: "thing"
+    showingInfoWindow: false,
+    activeMarker: null,
+    selectedTitle: "",
+    currentDate: "2017-02-01",// replace with current date
+    weatherSummary: "",
+    currentLat: 42.9456,
+    currentLong: -122.2
   }
  })
 }

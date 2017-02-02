@@ -10,6 +10,7 @@ import CampMapContainer from './CampMapContainer';
 import _ from 'underscore'
 import * as config from './config'
 import GoogleApiComponent from './GoogleApiComponent'
+import WeatherDatePicker from './WeatherDatePicker'
 
 export class CampFilterApp extends React.Component {
 
@@ -21,6 +22,8 @@ export class CampFilterApp extends React.Component {
         </Jumbotron>
         <br></br>
         <CampFilterList {...this.props}/>
+        <br></br>
+        <WeatherDatePicker {...this.props}/>
         <br></br>
         <CampMapContainer {...this.props} />
 
@@ -43,6 +46,10 @@ function mapStateToProps(state) {
     showingInfoWindow: state.get('showingInfoWindow'),
     activeMarker: state.get('activeMarker'),
     selectedTitle: state.get('selectedTitle'),
+    weatherSummary: state.get('weatherSummary'),
+    currentDate: state.get('currentDate'),
+    currentLat: state.get('currentLat'),
+    currentLong: state.get('currentLong'),
     gmapMarkers: state.get('gmapMarkers')
   };
 }

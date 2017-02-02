@@ -1,4 +1,5 @@
 import {Map} from 'immutable';
+import axios from 'axios';
 
 function getFilterIndex(state, itemId) {
   return state.get('filters').findIndex(
@@ -74,6 +75,44 @@ function changeFilter(state, filter) {
   }))
 }
 
+
+
+// weatherDate will be in 2017-03-20 format
+function getWeather(state, weatherDate) {
+  console.log("getting weather")
+  let request_url="https://crossorigin.me/https://api.darksky.net/forecast/8266ff95ef9bbfccf0ea24c325818f31/"
+  let weather_str = weatherDate + "T00:00:00"
+  request_url = request_url +  state.get('currentLat') + "," + state.get('currentLong')  + "," + weather_str
+  console.log(request_url)
+  let content = ""
+  try {
+   axios.get(request_url)
+    .then(function(result) {
+      content =  result.data.daily.data[0].summary
+      console.log(result.data)
+      return state.merge(Map({
+        'weatherSummary': content
+      }))
+    })
+    .catch(function (error) {
+      content = "unable to retrieve weather data"
+      console.log(error);
+      return state.merge(Map({
+        'weatherSummary': content
+      }))
+    });
+  }
+  catch(err) {
+    console.log(err)
+    return state.merge(Map({
+      'weatherSummary': content
+    }))
+  }
+
+  return state
+
+}
+
 export default function(state = Map(), action) {
   switch (action.type) {
     case 'SET_STATE':
@@ -84,6 +123,8 @@ export default function(state = Map(), action) {
         return onMarkerClick(state, action.marker)
     case 'ADD_MARKER':
         return addMarker(state, action.marker)
+    case 'GET_WEATHER':
+        return getWeather(state, action.weatherDate)
     default:
       return state
   }
